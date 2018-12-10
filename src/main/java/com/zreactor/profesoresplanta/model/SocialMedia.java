@@ -1,5 +1,7 @@
 package com.zreactor.profesoresplanta.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Set;
@@ -11,14 +13,15 @@ public class SocialMedia implements Serializable {
     @Id
     @Column(name = "id_social_media")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idSocialMedia;
+    private Long idSocialMedia;
     @Column(name = "name")
     private String name;
     @Column(name = "icon")
     private String icon;
     @OneToMany
     @JoinColumn(name = "id_social_media")
-    private Set<SocialMedia> teacherSocialMedia;
+    @JsonIgnore
+    private Set<TeacherSocialMedia> teacherSocialMedia;
 
     public SocialMedia(String name, String icon) {
         super();
@@ -30,16 +33,16 @@ public class SocialMedia implements Serializable {
         super();
     }
 
-    public SocialMedia(int idSocialMedia) {
+    public SocialMedia(Long idSocialMedia) {
         super();
     }
 
 
-    public int getIdSocialMedia() {
+    public Long getIdSocialMedia() {
         return idSocialMedia;
     }
 
-    public void setIdSocialMedia(int idSocialMedia) {
+    public void setIdSocialMedia(Long idSocialMedia) {
         this.idSocialMedia = idSocialMedia;
     }
 
@@ -61,11 +64,11 @@ public class SocialMedia implements Serializable {
         this.icon = icon;
     }
 
-    public Set<SocialMedia> getTeacherSocialMedia() {
+    public Set<TeacherSocialMedia> getTeacherSocialMedia() {
         return teacherSocialMedia;
     }
 
-    public void setTeacherSocialMedia(Set<SocialMedia> teacherSocialMedia) {
+    public void setTeacherSocialMedia(Set<TeacherSocialMedia> teacherSocialMedia) {
         this.teacherSocialMedia = teacherSocialMedia;
     }
 }

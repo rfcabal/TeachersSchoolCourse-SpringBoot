@@ -1,5 +1,7 @@
 package com.zreactor.profesoresplanta.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Set;
@@ -11,16 +13,18 @@ public class Teacher implements Serializable {
     @Id
     @Column(name = "id_teacher")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idTeacher;
+    private Long idTeacher;
     @Column(name = "name")
     private String name;
     @Column(name = "avatar")
     private String avatar;
 
     @OneToMany(mappedBy = "teacher")
+    @JsonIgnore
     private Set<Course> courses;
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_teacher")
+    @JsonIgnore
     private Set<TeacherSocialMedia> teacherSocialMedia;
 
     public Teacher(String name, String avatar) {
@@ -33,11 +37,11 @@ public class Teacher implements Serializable {
         super();
     }
 
-    public int getIdTeacher() {
+    public Long getIdTeacher() {
         return idTeacher;
     }
 
-    public void setIdTeacher(int idTeacher) {
+    public void setIdTeacher(Long idTeacher) {
         this.idTeacher = idTeacher;
     }
 

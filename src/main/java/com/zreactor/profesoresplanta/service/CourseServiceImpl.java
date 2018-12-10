@@ -26,7 +26,7 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
-    public Course findById(int idCourse) {
+    public Course findById(Long idCourse) {
         return _courseDao.findById(idCourse);
     }
 
@@ -36,12 +36,12 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
-    public List<Course> findByTeacher(int idTeacher) {
-        return _courseDao.findByTeacher(idTeacher);
+    public List<Course> findByIdTeacher(Long idTeacher) {
+        return _courseDao.findByIdTeacher(idTeacher);
     }
 
     @Override
-    public void deleteCourseById(int idCourse) {
+    public void deleteCourseById(Long idCourse) {
         _courseDao.deleteCourseById(idCourse);
     }
 

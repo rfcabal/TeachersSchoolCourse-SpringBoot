@@ -10,7 +10,7 @@ public class Course implements Serializable {
     @Id
     @Column(name = "id_course")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idCourse;
+    private Long idCourse;
     @ManyToOne(optional = true, fetch = FetchType.EAGER)
     @JoinColumn(name = "id_teacher")
     private Teacher teacher;
@@ -32,11 +32,11 @@ public class Course implements Serializable {
         super();
     }
 
-    public int getIdCourse() {
+    public Long getIdCourse() {
         return idCourse;
     }
 
-    public void setIdCourse(int idCourse) {
+    public void setIdCourse(Long idCourse) {
         this.idCourse = idCourse;
     }
 

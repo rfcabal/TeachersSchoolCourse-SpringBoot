@@ -27,22 +27,22 @@ public class SocialMediaServiceImpl implements SocialMediaService {
     }
 
     @Override
-    public SocialMedia findById(int idSocialMedia) {
+    public SocialMedia findById(Long idSocialMedia) {
         return _socialMediaDao.findById(idSocialMedia);
     }
 
     @Override
-    public SocialMedia finByName(String name) {
-        return _socialMediaDao.finByName(name);
+    public SocialMedia findByName(String name) {
+        return _socialMediaDao.findByName(name);
     }
 
     @Override
-    public TeacherSocialMedia findSocialMediaByIdAndName(int idSocialMedia, String nickname) {
+    public TeacherSocialMedia findSocialMediaByIdAndName(Long idSocialMedia, String nickname) {
         return _socialMediaDao.findSocialMediaByIdAndName(idSocialMedia, nickname);
     }
 
     @Override
-    public void deleteSocialMediaById(int idSocialMedia) {
+    public void deleteSocialMediaById(Long idSocialMedia) {
         _socialMediaDao.deleteSocialMediaById(idSocialMedia);
     }
 

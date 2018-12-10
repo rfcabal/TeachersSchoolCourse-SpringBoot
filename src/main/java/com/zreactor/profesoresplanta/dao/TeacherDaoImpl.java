@@ -21,7 +21,7 @@ public class TeacherDaoImpl extends AbstractSession implements TeacherDao {
     }
 
     @Override
-    public Teacher findById(int idTeacher) {
+    public Teacher findById(Long idTeacher) {
         return (Teacher) getSession().get(Teacher.class, idTeacher);
     }
 
@@ -34,7 +34,7 @@ public class TeacherDaoImpl extends AbstractSession implements TeacherDao {
     }
 
     @Override
-    public void deleteTeacherById(int idTeacher) {
+    public void deleteTeacherById(Long idTeacher) {
         Teacher teacher = findById(idTeacher);
         if(teacher != null) {
             getSession().delete(teacher);

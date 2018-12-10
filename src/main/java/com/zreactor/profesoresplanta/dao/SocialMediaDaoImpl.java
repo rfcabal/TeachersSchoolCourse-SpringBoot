@@ -22,12 +22,12 @@ public class SocialMediaDaoImpl extends AbstractSession implements SocialMediaDa
     }
 
     @Override
-    public SocialMedia findById(int idSocialMedia) {
+    public SocialMedia findById(Long idSocialMedia) {
         return (SocialMedia) getSession().get(SocialMedia.class, idSocialMedia);
     }
 
     @Override
-    public SocialMedia finByName(String name) {
+    public SocialMedia findByName(String name) {
         return (SocialMedia) getSession()
                 .createQuery("from SocialMedia where name = :name")
                 .setParameter("name", name)
@@ -35,7 +35,7 @@ public class SocialMediaDaoImpl extends AbstractSession implements SocialMediaDa
     }
 
     @Override
-    public TeacherSocialMedia findSocialMediaByIdAndName(int idSocialMedia, String nickname) {
+    public TeacherSocialMedia findSocialMediaByIdAndName(Long idSocialMedia, String nickname) {
         List<Object[]> objects = getSession().createQuery("from TeacherSocialMedia tsm join tsm.socialMedia sm where sm.idSocialMedia = :idSocialMedia and tsm.nickname = :nickname")
                 .setParameter("idSocialMedia", idSocialMedia)
                 .setParameter("nickname", nickname).list();
@@ -54,7 +54,7 @@ public class SocialMediaDaoImpl extends AbstractSession implements SocialMediaDa
     }
 
     @Override
-    public void deleteSocialMediaById(int idSocialMedia) {
+    public void deleteSocialMediaById(Long idSocialMedia) {
         SocialMedia socialMedia = findById(idSocialMedia);
         if(socialMedia != null) {
             getSession().delete(socialMedia);

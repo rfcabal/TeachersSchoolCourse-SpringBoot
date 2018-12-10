@@ -10,11 +10,11 @@ public interface TeacherDao {
 
     List<Teacher> findAllTeachers();
 
-    Teacher findById(int idTeacher);
+    Teacher findById(Long idTeacher);
 
     Teacher findByName(String name);
 
-    void deleteTeacherById(int idTeacher);
+    void deleteTeacherById(Long idTeacher);
 
     void updateTeacher(Teacher teacher);
 

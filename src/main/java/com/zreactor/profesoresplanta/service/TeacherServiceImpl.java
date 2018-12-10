@@ -26,7 +26,7 @@ public class TeacherServiceImpl implements TeacherService {
     }
 
     @Override
-    public Teacher findById(int idTeacher) {
+    public Teacher findById(Long idTeacher) {
         return _teacherDao.findById(idTeacher);
     }
 
@@ -36,7 +36,7 @@ public class TeacherServiceImpl implements TeacherService {
     }
 
     @Override
-    public void deleteTeacherById(int idTeacher) {
+    public void deleteTeacherById(Long idTeacher) {
         _teacherDao.deleteTeacherById(idTeacher);
     }
 

@@ -10,13 +10,13 @@ public interface CourseService {
 
     List<Course> findAllCourses();
 
-    Course findById(int idCourse);
+    Course findById(Long idCourse);
 
     Course findByName(String name);
 
-    List<Course> findByTeacher(int idTeacher);
+    List<Course> findByIdTeacher(Long idTeacher);
 
-    void deleteCourseById(int idCourse);
+    void deleteCourseById(Long idCourse);
 
     void updateCourse(Course course);
 

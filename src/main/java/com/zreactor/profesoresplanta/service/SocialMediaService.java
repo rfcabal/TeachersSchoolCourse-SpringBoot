@@ -11,13 +11,13 @@ public interface SocialMediaService {
 
     List<SocialMedia> findAllSocialMedia();
 
-    SocialMedia findById(int idSocialMedia);
+    SocialMedia findById(Long idSocialMedia);
 
-    SocialMedia finByName(String name);
+    SocialMedia findByName(String name);
 
-    TeacherSocialMedia findSocialMediaByIdAndName(int idSocialMedia, String nickname);
+    TeacherSocialMedia findSocialMediaByIdAndName(Long idSocialMedia, String nickname);
 
-    void deleteSocialMediaById(int idSocialMedia);
+    void deleteSocialMediaById(Long idSocialMedia);
 
     void updateSocialMedia(SocialMedia socialMedia);
 
