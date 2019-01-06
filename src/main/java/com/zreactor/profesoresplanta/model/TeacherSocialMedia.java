@@ -19,7 +19,6 @@ public class TeacherSocialMedia implements Serializable {
     private Teacher teacher;
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_social_media")
-    @JsonIgnore
     private SocialMedia socialMedia;
     @Column(name = "nickname")
     private String nickname;

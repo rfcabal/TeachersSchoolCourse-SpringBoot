@@ -22,9 +22,8 @@ public class Teacher implements Serializable {
     @OneToMany(mappedBy = "teacher")
     @JsonIgnore
     private Set<Course> courses;
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_teacher")
-    @JsonIgnore
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name="id_teacher")
     private Set<TeacherSocialMedia> teacherSocialMedia;
 
     public Teacher(String name, String avatar) {
